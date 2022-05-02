@@ -144,6 +144,7 @@ func checkClient(settings Settings, client Client) string {
 		go checkGeoIP2(settings, client.IP, ch) // Check the IP address using GeoIP2
 		count++
 		go checkWhois(settings, client.IP.String(), ch)
+		count++
 	}
 	if len(client.Name) > 0 {
 		go checkTopLevelDomain(settings, client.Name, ch)
